@@ -11,5 +11,8 @@
     "project"
   ],
   "author": "Abhishek Prajapati",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
 }
