@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 // write code to connect with mongoDB
 
-mongoose.connect("mongoose://127.0.0.1/be_demodb")
+mongoose.connect("mongodb://localhost:27017/demodb")
 
 const db = mongoose.connection  // start the connection with mongo db
 
