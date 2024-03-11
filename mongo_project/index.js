@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const studentModel = require("./models/student.model")
 
 // write code to connect with mongoDB
 
@@ -12,4 +13,18 @@ db.on("error", ()=>{
 
 db.once("open",()=>{
     console.log("connected to MongoDB");
+    // Logic to insert data into the db
+    init()
 })
+
+async function init(){
+    // logic to insert data in the db
+    const student = {
+        name : "Abhishek",
+        age : 20
+    }
+
+    const std_obj = await studentModel.create(student)
+
+    console.log(std_obj);
+}
