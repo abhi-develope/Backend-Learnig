@@ -64,4 +64,10 @@ async function dbQueries(){
 const stds = await studentModel.where("age").gt("10").where("name").equals("Abishek").limit(2)
 console.log(stds);
 
+
+// Delete document by there name 
+
+const student = await studentModel.deleteOne({name : "Abhishek"})
+console.log(student);
+
 }
