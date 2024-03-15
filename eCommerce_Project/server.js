@@ -6,6 +6,57 @@ const express = require("express")
 const mongoose = require("mongoose")
 const app = express()
 const server_config = require("./configs/server.config")
+const db_config = require("./configs/db.config")
+const user_model = require("./model/user.model")
+const bcrypt = require("bcryptjs")
+/**
+ * Create an admin user at the starting of the application
+ */
+
+// connection with mongodb
+mongoose.connect(db_config.DB_URL)
+
+const db = mongoose.connection
+
+db.on("error", ()=>{
+    console.log('Error while connecting to the mongodb');
+})
+
+db.once("open", ()=>{
+    console.log("connected to Mongodb");
+    init();
+})
+
+async function init(){
+    let user = await user_model.findOne({userId : "abmin"})
+    try {
+        if(user){
+            console.log("Admin is already present");
+            return
+        }
+        
+    } catch (error) {
+        console.log(err);
+        
+    }
+   
+
+    try{
+        user = await user_model.create({
+            name : "Abhishek",
+            userId : "abmin",
+            email : "aa@gmail.com",
+            userType : "ADMIN",
+            password : bcrypt.hashSync("welcom2",8)
+
+        })
+        console.log(user);
+        
+    }catch(err){
+        console.log("Error While creating admin", err);
+    }
+}
+
 
 
 
