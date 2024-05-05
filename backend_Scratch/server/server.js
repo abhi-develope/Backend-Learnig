@@ -8,7 +8,6 @@ app.use("/api/auth" , router)
 
 
 
-
 // app.get("/", (req, res)=>{
 //     res.status(200).send("Abhishek Prajapati")
 // })
@@ -22,3 +21,10 @@ const PORT = 5000;
 app.listen(PORT, ()=>{
     console.log(`server is started at port ${PORT}`);
 })
+
+
+
+
+
+
+
