@@ -1,0 +1,23 @@
+       
+MongoShell Command:-
+1. cls --> to clear cmd terminal
+2. show databases/ show dbs --> to see all database
+   (see/list only if it has data)
+3. use 'name of database' --> to use that database or change database
+4. use 'name the database to create' --> to create new database
+5. show collections --> to see all collection
+6. db.createCollection("name of collection")
+7. db."name of collection which have to change".renameCollection("students_new") --> to rename the collection
+8. db."name of collection you want to delete".drop() --> to delete the whole collection
+9. db."name of collection in which you want to insert".insertOne("name of the document which were buid")
+10.db.collection name.insertMany([{create documents}]) --> to insert more than many documents
+              
+             Filter command:-
+
+11.db.collection name.find() --> to see all documents of the collection
+12.db.collection name.find({enter filter property}) --. filter the document in the collection
+13.db.collection name.find({name : /V.*/}) --> to search document through regular expression if we have no idea of search keyword
+14.db.collection name.find().limit(n) --> to limit n number of document
+15.db.collection name.skip(n) --> to skip n number of document from start
+16.db.collection name.sort({name : 1}) --> to short by name and 1 0r -1 represent the sorting order it is in ascending order or descending order
+17.db.collection name.find().count() --> to count no. of document in the collection
