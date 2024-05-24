@@ -27,7 +27,7 @@ const studentSchema = new mongoose.Schema({
             return Date.now()
         }
     }
-})
+},{versionKey : false , timestamps : true})
 
 
 // create corresponding collection in db

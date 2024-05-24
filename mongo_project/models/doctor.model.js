@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 // creating schema
 
-const studentSchema = new mongoose.Schema({
+const doctorSchema = new mongoose.Schema({
     name : String,
     age : Number
 })
@@ -12,4 +12,4 @@ const studentSchema = new mongoose.Schema({
 
 // create corresponding collection in db
 
-module.exports = mongoose.model("student",studentSchema)
+module.exports = mongoose.model("doctor",doctorSchema)

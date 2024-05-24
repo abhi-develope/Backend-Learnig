@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-// const studentModel = require("./models/student.model")
+
+// const doctorModel = require("./models/doctor.model")
 const studentModel = require("./models/student2.model")
 
 // write code to connect with mongoDB
@@ -15,7 +16,7 @@ db.once("open",()=>{
 
     // running queries
 
-    dbQueries();
+    // dbQueries();
 
 })
 
@@ -26,48 +27,48 @@ db.on("error", ()=>{
 
 async function init(){
     // logic to insert data in the db
-    const student = {
-        name : "Abhishek",
-        age : 20,
+    const student2 = {
+        name : "Suraj",
+        age : 30,
         email :"prajapatiahishek320@gmail.com",
         subjects : ["English", "Maths"]
 
     }
 
-    const std_obj = await studentModel.create(student)
+    const std_obj = await studentModel.create(student2)
 
     console.log(std_obj);
 }
 
-async function dbQueries(){
-    // Read the student data
+// async function dbQueries(){
+//     // Read the student data
 
-    // Read the student data based on id
-    try{
-        const student = await studentModel.findById("65eefe382ffd69e8c2faf8b4")
-        console.log(student);
-    }catch(err){
-        console.log(err);
-    }
+//     // Read the student data based on id
+//     try{
+//         const student = await studentModel.findById("65eefe382ffd69e8c2faf8b4")
+//         console.log(student);
+//     }catch(err){
+//         console.log(err);
+//     }
 
-    // find data based on name
-    try{
-    const students = await studentModel.find({name : "Abhishek"})
-    console.log(students);
+//     // find data based on name
+//     try{
+//     const students = await studentModel.find({name : "Abhishek"})
+//     console.log(students);
 
-}catch(err){
-    console.log(err);
-}
+// }catch(err){
+//     console.log(err);
+// }
 
-// Deal with multiple conditions
+// // Deal with multiple conditions
 
-const stds = await studentModel.where("age").gt("10").where("name").equals("Abishek").limit(2)
-console.log(stds);
+// const stds = await studentModel.where("age").gt("10").where("name").equals("Abishek").limit(2)
+// console.log(stds);
 
 
-// Delete document by there name 
+// // Delete document by there name 
 
-const student = await studentModel.deleteOne({name : "Abhishek"})
-console.log(student);
+// const student = await studentModel.deleteOne({name : "Abhishek"})
+// console.log(student);
 
-}
+// }
