@@ -19,7 +19,7 @@ exports.signup = async (req, res)=>{
     name : request_body.name,
     userId : request_body.userId,
     email : request_body.email,
-    password : bcrypt.hashsSync(request_body.password,8)
+    password : bcrypt.hashSync(request_body.password,8)
   }
 
   try {
