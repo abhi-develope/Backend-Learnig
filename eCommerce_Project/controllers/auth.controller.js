@@ -27,7 +27,17 @@ exports.signup = async (req, res)=>{
     /**
      * return this user
      */
-    res.status(201).send(user_created)
+    
+    const res_obj = {
+      name : user_created.name,
+      userId : user_created.userId,
+      email : user_created.email,
+      userType : user_created.userType,
+      createdAt : user_created.createdAt,
+      updatedAt : user_created.updateAt
+    }
+
+    res.status(201).send(res_obj)
   } catch (error) {
     console.log(error)
     res.status(500).send({
