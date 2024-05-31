@@ -4,7 +4,7 @@ const category_model = require("../model/category.model")
 /**
  * controller for creating the category
  * 
- * POST localhost:8080/ecomm/api/v1/auth/categories
+ * POST localhost:8080/ecomm/api/v1/categories
  * 
  * {
  *   "name" : "household"
