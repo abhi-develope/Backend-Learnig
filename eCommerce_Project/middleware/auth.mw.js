@@ -72,7 +72,7 @@ const verifySignInBody = async(req, res, next)=>{
 
 const verifyToken = (req, res, next)=>{
     //Check if the token is present in the header
-    const token = req.headers('x-access-token')
+    const token = req.headers['x-access-token']
 
     if(!token){
         return res.status(403).send({
@@ -83,7 +83,7 @@ const verifyToken = (req, res, next)=>{
     //If it's the valid token
     jwt.verify(token, auth_config.secret, async (err, decoded)=>{
         if(err){
-            return req.status(401).send({
+            return res.status(401).send({
                 message : "Unauthorized"
             })
         }
