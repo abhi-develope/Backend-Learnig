@@ -16,7 +16,7 @@ db.once("open",()=>{
 
     // running queries
 
-    // dbQueries();
+    dbQueries();
 
 })
 
@@ -40,35 +40,35 @@ async function init(){
     console.log(std_obj);
 }
 
-// async function dbQueries(){
-//     // Read the student data
+async function dbQueries(){
+    // Read the student data
 
-//     // Read the student data based on id
-//     try{
-//         const student = await studentModel.findById("65eefe382ffd69e8c2faf8b4")
-//         console.log(student);
-//     }catch(err){
-//         console.log(err);
-//     }
+    // Read the student data based on id
+    try{
+        const student = await studentModel.findById("65eefe382ffd69e8c2faf8b4")
+        console.log(student);
+    }catch(err){
+        console.log(err);
+    }
 
-//     // find data based on name
-//     try{
-//     const students = await studentModel.find({name : "Abhishek"})
-//     console.log(students);
+    // find data based on name
+    try{
+    const students = await studentModel.find({name : "Abhishek"})
+    console.log(students);
 
-// }catch(err){
-//     console.log(err);
-// }
+}catch(err){
+    console.log(err);
+}
 
-// // Deal with multiple conditions
+// Deal with multiple conditions
 
-// const stds = await studentModel.where("age").gt("10").where("name").equals("Abishek").limit(2)
-// console.log(stds);
+const stds = await studentModel.where("age").gt("10").where("name").equals("Abishek").limit(2)
+console.log(stds);
 
 
-// // Delete document by there name 
+// Delete document by there name 
 
-// const student = await studentModel.deleteOne({name : "Abhishek"})
-// console.log(student);
+const student = await studentModel.deleteOne({name : "Abhishek"})
+console.log(student);
 
-// }
+}
